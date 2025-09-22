@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lauren & Maxime - Notre Mariage en Provence</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- EmailJS CDN -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="nav-logo">
+                    <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/715f1089-68f3-44a9-b1e9-2f109ae0be30.png" alt="Monogramme L&M" class="nav-monogram">
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link">Accueil</a></li>
+                    <li><a href="#bienvenue" class="nav-link">Bienvenue</a></li>
+                    <li><a href="#programme" class="nav-link">Programme</a></li>
+                    <li><a href="#rsvp" class="nav-link">RSVP</a></li>
+                    <li><a href="#hebergement" class="nav-link">Hébergement</a></li>
+                    <li><a href="#restaurants" class="nav-link">Restaurants</a></li>
+                    <li><a href="#lieux" class="nav-link">Lieux Incontournables</a></li>
+                    <li><a href="#cadeaux" class="nav-link">Cadeaux</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <button class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-monogram">
+                <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/715f1089-68f3-44a9-b1e9-2f109ae0be30.png" alt="Monogramme L&M" class="monogram-image">
+            </div>
+            <h1 class="hero-title">Lauren & Maxime</h1>
+            <p class="hero-subtitle">Nous unissons nos vies</p>
+            <div class="hero-date">
+                <span class="date-number">19</span>
+                <div class="date-text">
+                    <span>Septembre</span>
+                    <span>2026</span>
+                </div>
+            </div>
+            <p class="hero-location">Maison Claudie, Drôme Provençale</p>
+            
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">362</span>
+                    <span class="countdown-label">Jours</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">12</span>
+                    <span class="countdown-label">Heures</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">45</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+            </div>
+
+            <div class="hero-actions">
+                <a href="#rsvp" class="btn btn--primary">Confirmer ma présence</a>
+                <a href="#programme" class="btn btn--outline">Voir le programme</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bienvenue Section -->
+    <section id="bienvenue" class="welcome-section">
+        <div class="container">
+            <div class="welcome-content">
+                <h2 class="section-title">Bienvenue</h2>
+                <div class="welcome-message">
+                    <p class="welcome-intro">Chers amis, chère famille,</p>
+                    <p>C'est avec une immense joie que nous vous invitons à célébrer notre union au cœur de la Drôme Provençale, dans le cadre enchanteur de la Maison Claudie.</p>
+                    <p>Nous avons choisi ce lieu magique entouré d'oliviers centenaires et de collines verdoyantes pour dire "oui" entourés de ceux qui nous sont les plus chers. L'atmosphère provençale, avec ses tons de vert sauge et ses pierres chaudes, reflète parfaitement la sérénité et la joie que nous souhaitons partager avec vous.</p>
+                    <p>Cette journée sera l'occasion de célébrer non seulement notre amour, mais aussi tous les moments précieux que nous avons partagés ensemble et ceux qui nous attendent. Le lendemain, nous vous invitons à poursuivre les festivités lors d'un brunch convivial.</p>
+                    <p class="welcome-signature">Avec tout notre amour,<br><strong>Lauren & Maxime</strong></p>
+                </div>
+                
+                <div class="love-story">
+                    <h3>Notre histoire</h3>
+                    <p>Nous nous sommes rencontrés il y a six ans lors d'un séjour en Provence. C'est donc tout naturellement que nous avons choisi de revenir dans cette région qui a vu naître notre amour pour célébrer notre mariage entourés de nos proches.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programme Section -->
+    <section id="programme" class="program-section">
+        <div class="container">
+            <h2 class="section-title">Programme des festivités</h2>
+            
+            <!-- Wedding Day -->
+            <div class="program-day">
+                <p class="section-subtitle">Samedi 19 septembre 2026 - Mariage</p>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-time">15h00</div>
+                        <div class="timeline-content">
+                            <h3>Arrivée des invités</h3>
+                            <p class="location">Maison Claudie</p>
+                            <p>Accueil avec cocktail de bienvenue aux saveurs provençales</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">16h00</div>
+                        <div class="timeline-content">
+                            <h3>Cérémonie laïque</h3>
+                            <p class="location">Jardin de Maison Claudie</p>
+                            <p>Cérémonie en plein air entourée d'oliviers centenaires</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">17h00</div>
+                        <div class="timeline-content">
+                            <h3>Cocktail d'honneur</h3>
+                            <p class="location">Terrasse en pierre</p>
+                            <p>Cocktail avec vue panoramique sur les collines provençales</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">20h00</div>
+                        <div class="timeline-content">
+                            <h3>Dîner de mariage</h3>
+                            <p class="location">Salle de réception</p>
+                            <p>Repas gastronomique aux saveurs de Provence</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">23h00</div>
+                        <div class="timeline-content">
+                            <h3>Soirée dansante</h3>
+                            <p class="location">Salle de réception</p>
+                            <p>Musique et danse jusqu'au petit matin</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Brunch Day -->
+            <div class="program-day">
+                <p class="section-subtitle">Dimanche 20 septembre 2026 - Brunch</p>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-time">11h00</div>
+                        <div class="timeline-content">
+                            <h3>Brunch de lendemain</h3>
+                            <p class="location">Terrasse de Maison Claudie</p>
+                            <p>Brunch décontracté avec spécialités locales</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">14h00</div>
+                        <div class="timeline-content">
+                            <h3>Fin des festivités</h3>
+                            <p class="location">Maison Claudie</p>
+                            <p>Au revoir et merci à tous nos invités</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="program-notes">
+                <h3>Informations pratiques</h3>
+                <ul>
+                    <li><strong>Code vestimentaire :</strong> Tenue de cocktail, couleurs claires recommandées</li>
+                    <li><strong>Météo :</strong> Température douce en septembre, prévoir une petite veste pour la soirée</li>
+                    <li><strong>Parking :</strong> Parking gratuit disponible sur place</li>
+                    <li><strong>Enfants :</strong> Les enfants sont les bienvenus aux deux événements</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section id="rsvp" class="rsvp-section">
+        <div class="container">
+            <h2 class="section-title">Confirmez votre présence</h2>
+            <p class="section-subtitle">Merci de confirmer votre présence avant le 19 juillet 2026</p>
+            
+            <div class="rsvp-form-container" id="rsvpFormContainer">
+                <form class="rsvp-form" id="rsvpForm" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="guestName">Nom(s) des invités *</label>
+                            <input type="text" name="guestName" id="guestName" class="form-control" required autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email *</label>
+                            <input type="email" name="email" id="email" class="form-control" required autocomplete="email">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="phone">Téléphone</label>
+                            <input type="tel" name="phone" id="phone" class="form-control" autocomplete="tel">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Présence au mariage (19 septembre 2026) *</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="weddingAttendance" value="oui" required>
+                                <span class="radio-custom"></span>
+                                Oui, nous serons présents
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="weddingAttendance" value="non" required>
+                                <span class="radio-custom"></span>
+                                Non, nous ne pourrons pas être présents
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="weddingGuests">Nombre de personnes pour le mariage</label>
+                        <select name="weddingGuests" id="weddingGuests" class="form-control">
+                            <option value="">Sélectionnez</option>
+                            <option value="1">1 personne</option>
+                            <option value="2">2 personnes</option>
+                            <option value="3">3 personnes</option>
+                            <option value="4">4 personnes</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Présence au brunch (20 septembre 2026)</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="brunchAttendance" value="oui">
+                                <span class="radio-custom"></span>
+                                Oui, nous serons présents
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="brunchAttendance" value="non">
+                                <span class="radio-custom"></span>
+                                Non, nous ne pourrons pas être présents
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="brunchGuests">Nombre de personnes pour le brunch</label>
+                        <select name="brunchGuests" id="brunchGuests" class="form-control">
+                            <option value="">Sélectionnez</option>
+                            <option value="1">1 personne</option>
+                            <option value="2">2 personnes</option>
+                            <option value="3">3 personnes</option>
+                            <option value="4">4 personnes</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="dietary">Allergies ou régimes alimentaires particuliers</label>
+                        <textarea name="dietary" id="dietary" class="form-control" rows="3" placeholder="Merci de nous indiquer toute allergie ou régime alimentaire particulier"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="message">Message pour les mariés</label>
+                        <textarea name="message" id="message" class="form-control" rows="4" placeholder="Laissez-nous un petit mot..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn--primary btn--full-width" id="submitBtn">Confirmer ma réponse</button>
+                </form>
+            </div>
+            
+            <div id="rsvpSuccess" class="rsvp-success" style="display: none;">
+                <h3>🌿 Merci pour votre réponse !</h3>
+                <p>Nous avons bien reçu votre confirmation et vous avons envoyé un email de confirmation. Nous avons hâte de vous retrouver pour ces journées exceptionnelles.</p>
+                <button type="button" class="btn btn--outline" onclick="showRSVPForm()">Nouvelle réponse</button>
+            </div>
+            
+            <div id="rsvpError" class="rsvp-error" style="display: none;">
+                <h3>❌ Erreur lors de l'envoi</h3>
+                <p>Une erreur s'est produite lors de l'envoi de votre réponse. Veuillez réessayer ou nous contacter directement.</p>
+                <button type="button" class="btn btn--primary" onclick="showRSVPForm()">Réessayer</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hébergement Section -->
+    <section id="hebergement" class="accommodation-section">
+        <div class="container">
+            <h2 class="section-title">Hébergement</h2>
+            <p class="section-subtitle">Sélection d'hôtels proches de Maison Claudie</p>
+            
+            <div class="accommodation-grid">
+                <div class="accommodation-card">
+                    <h3>Hôtel Villa Saint-Louis</h3>
+                    <div class="accommodation-type">Boutique Hotel</div>
+                    <div class="accommodation-info">
+                        <span class="distance">15 minutes de Maison Claudie</span>
+                        <span class="price">€€€</span>
+                    </div>
+                    <p>Charmant hôtel boutique au cœur de la Drôme provençale</p>
+                    <div class="accommodation-actions">
+                        <button type="button" class="btn btn--outline btn--sm hotel-info-btn">Plus d'infos</button>
+                    </div>
+                </div>
+                
+                <div class="accommodation-card">
+                    <h3>Château de Montélimar</h3>
+                    <div class="accommodation-type">Château Hotel</div>
+                    <div class="accommodation-info">
+                        <span class="distance">20 minutes de Maison Claudie</span>
+                        <span class="price">€€€€</span>
+                    </div>
+                    <p>Hébergement de luxe dans un château historique</p>
+                    <div class="accommodation-actions">
+                        <button type="button" class="btn btn--outline btn--sm hotel-info-btn">Plus d'infos</button>
+                    </div>
+                </div>
+                
+                <div class="accommodation-card">
+                    <h3>La Bastide des Cyprès</h3>
+                    <div class="accommodation-type">Chambres d'hôtes</div>
+                    <div class="accommodation-info">
+                        <span class="distance">10 minutes de Maison Claudie</span>
+                        <span class="price">€€</span>
+                    </div>
+                    <p>Maison d'hôtes authentique avec petit déjeuner inclus</p>
+                    <div class="accommodation-actions">
+                        <button type="button" class="btn btn--outline btn--sm hotel-info-btn">Plus d'infos</button>
+                    </div>
+                </div>
+
+                <div class="accommodation-card">
+                    <h3>Domaine de la Valdaine</h3>
+                    <div class="accommodation-type">Gîte rural</div>
+                    <div class="accommodation-info">
+                        <span class="distance">5 minutes de Maison Claudie</span>
+                        <span class="price">€€</span>
+                    </div>
+                    <p>Gîtes de charme dans un cadre naturel exceptionnel</p>
+                    <div class="accommodation-actions">
+                        <button type="button" class="btn btn--outline btn--sm hotel-info-btn">Plus d'infos</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accommodation-note">
+                <p><strong>Note :</strong> Nous recommandons de réserver rapidement car la saison automnale en Provence est très demandée. N'hésitez pas à mentionner le mariage de Lauren et Maxime pour bénéficier d'éventuelles réductions groupes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Restaurants Section -->
+    <section id="restaurants" class="restaurants-section">
+        <div class="container">
+            <h2 class="section-title">Nos Bonnes Adresses</h2>
+            <p class="section-subtitle">Sélection de restaurants en Drôme Provençale pour prolonger le plaisir</p>
+            
+            <div class="restaurants-grid">
+                <div class="restaurant-card">
+                    <h3>Le Printemps</h3>
+                    <div class="restaurant-specialty">Cuisine raffinée de saison</div>
+                    <div class="restaurant-info">
+                        <span class="location">Montélimar</span>
+                        <span class="distance">20 minutes</span>
+                    </div>
+                    <p>Restaurant gastronomique réputé pour ses saveurs locales et sa magnifique terrasse ombragée</p>
+                </div>
+                
+                <div class="restaurant-card">
+                    <h3>Domaine du Colombier</h3>
+                    <div class="restaurant-specialty">Étoilé Michelin</div>
+                    <div class="restaurant-info">
+                        <span class="location">Malataverne</span>
+                        <span class="distance">25 minutes</span>
+                    </div>
+                    <p>Expérience gastronomique d'exception avec cave à vins remarquable dans un cadre naturel préservé</p>
+                </div>
+                
+                <div class="restaurant-card">
+                    <h3>Restaurant Lavandin</h3>
+                    <div class="restaurant-specialty">Cuisine du terroir</div>
+                    <div class="restaurant-info">
+                        <span class="location">Charols</span>
+                        <span class="distance">15 minutes</span>
+                    </div>
+                    <p>Au Château Les Oliviers de Salettes, cuisine raffinée avec produits du potager dans un décor provençal</p>
+                </div>
+                
+                <div class="restaurant-card">
+                    <h3>La Veranda</h3>
+                    <div class="restaurant-specialty">Cuisine française healthy</div>
+                    <div class="restaurant-info">
+                        <span class="location">Montélimar</span>
+                        <span class="distance">20 minutes</span>
+                    </div>
+                    <p>Produits régionaux et menu découverte dans une ambiance chaleureuse appréciée des locaux</p>
+                </div>
+                
+                <div class="restaurant-card">
+                    <h3>Le Saint-Victor</h3>
+                    <div class="restaurant-specialty">Cuisine provençale maison</div>
+                    <div class="restaurant-info">
+                        <span class="location">Grignan</span>
+                        <span class="distance">30 minutes</span>
+                    </div>
+                    <p>Restaurant typique dans l'un des plus beaux villages de France, authenticité garantie</p>
+                </div>
+                
+                <div class="restaurant-card">
+                    <h3>Le Moderne</h3>
+                    <div class="restaurant-specialty">Gastronomie française moderne</div>
+                    <div class="restaurant-info">
+                        <span class="location">Montélimar</span>
+                        <span class="distance">20 minutes</span>
+                    </div>
+                    <p>Réputé pour son accueil chaleureux et ses saveurs innovantes qui subliment les produits locaux</p>
+                </div>
+            </div>
+            
+            <div class="restaurants-note">
+                <p><strong>Conseil :</strong> Nous recommandons de réserver à l'avance, particulièrement pour les restaurants gastronomiques. N'hésitez pas à mentionner que vous assistez au mariage de Lauren et Maxime !</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lieux Incontournables Section -->
+    <section id="lieux" class="attractions-section">
+        <div class="container">
+            <h2 class="section-title">Lieux Incontournables</h2>
+            <p class="section-subtitle">Découvrez les merveilles de la Drôme Provençale</p>
+            
+            <div class="attractions-grid">
+                <div class="attraction-card">
+                    <h3>Vieux village médiéval d'Allan</h3>
+                    <div class="attraction-type">Patrimoine historique</div>
+                    <div class="attraction-distance">5 minutes</div>
+                    <p>Ruines médiévales et panorama exceptionnel sur la vallée du Rhône dans ce village perché chargé d'histoire</p>
+                </div>
+                
+                <div class="attraction-card">
+                    <h3>Château de Grignan</h3>
+                    <div class="attraction-type">Monument Renaissance</div>
+                    <div class="attraction-distance">30 minutes</div>
+                    <p>Chef-d'œuvre architectural avec vue imprenable, expositions autour de la marquise de Sévigné</p>
+                </div>
+                
+                <div class="attraction-card">
+                    <h3>Palais Idéal du Facteur Cheval</h3>
+                    <div class="attraction-type">Monument unique</div>
+                    <div class="attraction-distance">45 minutes</div>
+                    <p>Palais féerique classé monument historique à Hauterives, symbole du rêve et de la créativité</p>
+                </div>
+                
+                <div class="attraction-card">
+                    <h3>Marché de Nyons</h3>
+                    <div class="attraction-type">Marché provençal</div>
+                    <div class="attraction-distance">40 minutes</div>
+                    <p>Marché authentique célèbre pour son huile d'olive AOP et son ambiance typiquement provençale</p>
+                </div>
+                
+                <div class="attraction-card">
+                    <h3>Château de Montélimar</h3>
+                    <div class="attraction-type">Forteresse médiévale</div>
+                    <div class="attraction-distance">20 minutes</div>
+                    <p>Forteresse historique offrant un panorama sur la ville, expositions d'art et mobilier d'époque</p>
+                </div>
+                
+                <div class="attraction-card">
+                    <h3>La Ferme aux Crocodiles</h3>
+                    <div class="attraction-type">Parc animalier</div>
+                    <div class="attraction-distance">35 minutes</div>
+                    <p>Parc impressionnant à Pierrelatte pour une immersion totale dans la faune exotique</p>
+                </div>
+                
+                <div class="attraction-card">
+                    <h3>Sentiers de randonnée d'Allan</h3>
+                    <div class="attraction-type">Nature et paysages</div>
+                    <div class="attraction-distance">5 minutes</div>
+                    <p>Balades familiales parmi vignes, lavandes et oliviers avec paysages à perte de vue</p>
+                </div>
+                
+                <div class="attraction-card">
+                    <h3>Palais des Bonbons et du Nougat</h3>
+                    <div class="attraction-type">Gourmandise</div>
+                    <div class="attraction-distance">20 minutes</div>
+                    <p>Temple des douceurs provençales à Montélimar, dégustation et découverte des traditions sucrées</p>
+                </div>
+            </div>
+            
+            <div class="attractions-note">
+                <p><strong>Astuce :</strong> Profitez de votre séjour pour explorer cette magnifique région ! La plupart des sites sont ouverts toute l'année, mais vérifiez les horaires en septembre.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cadeaux Section -->
+    <section id="cadeaux" class="gifts-section">
+        <div class="container">
+            <h2 class="section-title">Liste de cadeaux</h2>
+            <p class="section-subtitle">Vos présences sont le plus beau des cadeaux, mais si vous souhaitez nous gâter...</p>
+            
+            <div class="gifts-grid">
+                <div class="gifts-category">
+                    <h3>Pour notre foyer</h3>
+                    <ul class="gifts-list">
+                        <li>Linge de maison provençal</li>
+                        <li>Vaisselle artisanale</li>
+                        <li>Décoration méditerranéenne</li>
+                        <li>Ustensiles de cuisine en olivier</li>
+                    </ul>
+                </div>
+                
+                <div class="gifts-category">
+                    <h3>Expériences à partager</h3>
+                    <ul class="gifts-list">
+                        <li>Week-end œnotouristique</li>
+                        <li>Cours de cuisine provençale</li>
+                        <li>Séance spa en duo</li>
+                        <li>Randonnée guidée en Drôme</li>
+                    </ul>
+                </div>
+                
+                <div class="gifts-category">
+                    <h3>Voyage de noces</h3>
+                    <ul class="gifts-list">
+                        <li>Contribution au voyage de noces</li>
+                        <li>Activités romantiques</li>
+                        <li>Hébergement de charme</li>
+                        <li>Expériences gastronomiques</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="gifts-info">
+                <p>Une urne sera à votre disposition les jours du mariage et du brunch, ou vous pouvez nous contacter directement pour plus d'informations sur nos registres.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Contact & Informations pratiques</h2>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Lieu de réception</h3>
+                    <p><strong>Maison Claudie</strong><br>
+                    Route de la Drôme Provençale<br>
+                    26000 Drôme, France</p>
+                    
+                    <h3>Contact</h3>
+                    <p>Lauren Mayoraz<br>
+                    <a href="mailto:laurenetmaxime@gmail.com">laurenetmaxime@gmail.com</a><br>
+                    06 12 34 56 78</p>
+                    
+                    <p>Maxime Borel<br>
+                    <a href="mailto:laurenetmaxime@gmail.com">laurenetmaxime@gmail.com</a><br>
+                    06 98 76 54 32</p>
+                </div>
+                
+                <div class="practical-info">
+                    <h3>Informations pratiques</h3>
+                    <ul>
+                        <li><strong>Météo :</strong> Température moyenne en septembre : 22°C</li>
+                        <li><strong>Transport :</strong> Navettes possibles depuis la gare de Valence</li>
+                        <li><strong>Parking :</strong> Gratuit sur place</li>
+                        <li><strong>Enfants :</strong> Les enfants sont les bienvenus</li>
+                        <li><strong>Cadeaux :</strong> Urne disponible sur place</li>
+                    </ul>
+                    
+                    <h3>Questions fréquentes</h3>
+                    <details class="faq-item">
+                        <summary>Que porter pour un mariage en septembre en Provence ?</summary>
+                        <p>Tenue de cocktail recommandée. Les couleurs automnales et tons naturels sont parfaits. Prévoir une petite veste pour la soirée car les températures peuvent être fraîches.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Y a-t-il un menu enfant ?</summary>
+                        <p>Oui, un menu spécial enfant sera proposé pour le mariage et le brunch. Merci de nous indiquer lors de votre RSVP le nombre d'enfants.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Comment se rendre à Maison Claudie ?</summary>
+                        <p>Le domaine est facilement accessible en voiture. Des navettes peuvent être organisées depuis la gare de Valence pour les invités arrivant en train.</p>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/715f1089-68f3-44a9-b1e9-2f109ae0be30.png" alt="Monogramme L&M" class="footer-monogram">
+                <p>&copy; 2026 Lauren & Maxime - Avec amour</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
