@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Allura:wght@400&family=Great+Vibes&family=Montserrat:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <!-- EmailJS CDN -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
@@ -17,7 +17,7 @@
         <div class="container">
             <div class="nav-content">
                 <div class="nav-logo">
-                    <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/715f1089-68f3-44a9-b1e9-2f109ae0be30.png" alt="Monogramme L&M" class="nav-monogram">
+                    <span class="nav-logo-text">The Borels</span>
                 </div>
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="#home" class="nav-link">Accueil</a></li>
@@ -42,19 +42,24 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <div class="hero-monogram">
-                <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/715f1089-68f3-44a9-b1e9-2f109ae0be30.png" alt="Monogramme L&M" class="monogram-image">
+            <div class="hero-family-name">
+                <h1 class="family-name">The Borels</h1>
             </div>
-            <h1 class="hero-title">Lauren & Maxime</h1>
+            
+            <h2 class="hero-title">Lauren & Maxime</h2>
             <p class="hero-subtitle">Nous unissons nos vies</p>
+            
+            <!-- Venue Display - without white background -->
+            <div class="venue-info">
+                <h3 class="venue-name">MAISON CLAUDIE</h3>
+                <p class="venue-location">Drôme Provençale</p>
+            </div>
+            
             <div class="hero-date">
-                <span class="date-number">19</span>
-                <div class="date-text">
-                    <span>Septembre</span>
-                    <span>2026</span>
+                <div class="date-display">
+                    <span class="date-text">19 & 20 SEPTEMBRE 2026</span>
                 </div>
             </div>
-            <p class="hero-location">Maison Claudie, Drôme Provençale</p>
             
             <div class="countdown" id="countdown">
                 <div class="countdown-item">
@@ -604,7 +609,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/715f1089-68f3-44a9-b1e9-2f109ae0be30.png" alt="Monogramme L&M" class="footer-monogram">
+                <span class="footer-logo-text">The Borels</span>
                 <p>&copy; 2026 Lauren & Maxime - Avec amour</p>
             </div>
         </div>

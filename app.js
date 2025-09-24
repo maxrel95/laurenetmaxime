@@ -3,14 +3,14 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('🌿 Lauren & Maxime wedding website loading with EmailJS... 💚');
     
-    // Initialize EmailJS
+    // Initialize EmailJS with REAL configuration
     (function() {
-        // EmailJS Public Key - Replace with your actual public key
-        emailjs.init("YOUR_PUBLIC_KEY_HERE");
-        console.log('✅ EmailJS initialized successfully');
+        // EmailJS Public Key - REAL VALUE
+        emailjs.init("9WYw8VF1D3MNl20aI");
+        console.log('✅ EmailJS initialized successfully with real configuration');
     })();
     
-    // EmailJS Configuration
+    // REAL EmailJS Configuration
     const EMAILJS_CONFIG = {
         SERVICE_ID: 'service_1si5ien',
         TEMPLATE_ID: 'template_6iaihg4',
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     initCountdown();
     
-    // Enhanced RSVP Form Handling with EmailJS Integration
+    // Enhanced RSVP Form Handling with REAL EmailJS Integration
     function setupRSVPFormWithEmailJS() {
         const rsvpForm = document.getElementById('rsvpForm');
         const rsvpFormContainer = document.getElementById('rsvpFormContainer');
@@ -136,13 +136,13 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        console.log('Setting up enhanced RSVP form with EmailJS integration...');
+        console.log('Setting up enhanced RSVP form with REAL EmailJS integration...');
         
         rsvpForm.addEventListener('submit', function(e) {
             e.preventDefault();
             e.stopPropagation();
             
-            console.log('RSVP Form submitted with EmailJS!');
+            console.log('RSVP Form submitted with REAL EmailJS configuration!');
             
             // Get form data
             const formData = getFormData();
@@ -154,8 +154,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 return false;
             }
             
-            // All validation passed, submit via EmailJS
-            console.log('Validation passed, submitting via EmailJS...');
+            // All validation passed, submit via EmailJS with REAL configuration
+            console.log('Validation passed, submitting via REAL EmailJS...');
             submitRSVPWithEmailJS(formData);
             
             return false;
@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         function submitRSVPWithEmailJS(data) {
-            console.log('Processing RSVP submission with EmailJS...');
+            console.log('Processing RSVP submission with REAL EmailJS configuration...');
             
             // Show loading state
             setButtonLoading(true);
@@ -246,25 +246,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 submission_time: new Date().toLocaleTimeString('fr-FR')
             };
             
-            console.log('Sending email with template params:', templateParams);
+            console.log('Sending email with REAL EmailJS config and template params:', templateParams);
             
-            // Send email using EmailJS
+            // Send email using EmailJS with REAL configuration
             emailjs.send(
                 EMAILJS_CONFIG.SERVICE_ID,
                 EMAILJS_CONFIG.TEMPLATE_ID,
                 templateParams,
                 EMAILJS_CONFIG.PUBLIC_KEY
             ).then(function(response) {
-                console.log('✅ EmailJS SUCCESS!', response.status, response.text);
+                console.log('✅ REAL EmailJS SUCCESS!', response.status, response.text);
                 handleRSVPSuccess(data);
             }).catch(function(error) {
-                console.error('❌ EmailJS FAILED...', error);
+                console.error('❌ REAL EmailJS FAILED...', error);
                 handleRSVPError(error);
             });
         }
         
         function handleRSVPSuccess(data) {
-            console.log('✅ RSVP submitted successfully via EmailJS:', data);
+            console.log('✅ RSVP submitted successfully via REAL EmailJS:', data);
             
             // Reset loading state
             setButtonLoading(false);
@@ -289,7 +289,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         function handleRSVPError(error) {
-            console.error('❌ RSVP submission failed:', error);
+            console.error('❌ RSVP submission failed with REAL EmailJS:', error);
             
             // Reset loading state
             setButtonLoading(false);
@@ -322,7 +322,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
-        console.log('✅ Enhanced RSVP form with EmailJS setup complete');
+        console.log('✅ Enhanced RSVP form with REAL EmailJS setup complete');
     }
     
     // Global function to show RSVP form again
@@ -349,9 +349,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     setupRSVPFormWithEmailJS();
     
-    // Fixed: Accommodation Hotel Info for Drôme Provençale - Immediate setup
+    // Enhanced Accommodation Hotel Info with Modal System
     function setupAccommodationCards() {
-        console.log('Setting up accommodation cards...');
+        console.log('Setting up accommodation cards with modal system...');
         
         // Define hotel information data
         const hotelInfoData = {
@@ -397,48 +397,120 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         };
         
-        // Function to show hotel info
+        // Create modal container if it doesn't exist
+        function createModalContainer() {
+            let modal = document.getElementById('hotelInfoModal');
+            if (!modal) {
+                modal = document.createElement('div');
+                modal.id = 'hotelInfoModal';
+                modal.className = 'hotel-info-modal';
+                modal.innerHTML = `
+                    <div class="hotel-info-content">
+                        <button class="hotel-info-close" aria-label="Fermer">&times;</button>
+                        <div id="hotelInfoDetails"></div>
+                    </div>
+                `;
+                document.body.appendChild(modal);
+                
+                // Setup modal close events
+                const closeBtn = modal.querySelector('.hotel-info-close');
+                closeBtn.addEventListener('click', () => closeModal());
+                
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) closeModal();
+                });
+                
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && modal.classList.contains('active')) {
+                        closeModal();
+                    }
+                });
+            }
+            return modal;
+        }
+        
+        // Function to show hotel info in modal
         function showHotelInfo(hotelName) {
             console.log('Displaying info for:', hotelName);
             
+            const modal = createModalContainer();
+            const detailsContainer = modal.querySelector('#hotelInfoDetails');
+            
             const info = hotelInfoData[hotelName];
             if (info) {
-                const modalContent = `🏨 ${hotelName}
-
-📍 Adresse: ${info.address}
-📞 Téléphone: ${info.phone}
-✉️ Email: ${info.email}
-🌐 Site web: ${info.website}
-
-💰 Tarifs: ${info.rooms}
-
-📝 Description:
-${info.description}
-
-🎯 Services:
-• ${info.amenities.join('\n• ')}
-
-💡 Réservation:
-${info.booking}
-
-Pour réserver, contactez directement l'établissement ou utilisez leur site web. N'hésitez pas à mentionner le mariage de Lauren & Maxime !`;
+                detailsContainer.innerHTML = `
+                    <h3>${hotelName}</h3>
+                    <div class="hotel-info-detail">
+                        <strong>📍 Adresse:</strong>
+                        <p>${info.address}</p>
+                    </div>
+                    <div class="hotel-info-detail">
+                        <strong>📞 Téléphone:</strong>
+                        <p>${info.phone}</p>
+                    </div>
+                    <div class="hotel-info-detail">
+                        <strong>✉️ Email:</strong>
+                        <p>${info.email}</p>
+                    </div>
+                    <div class="hotel-info-detail">
+                        <strong>🌐 Site web:</strong>
+                        <p>${info.website}</p>
+                    </div>
+                    <div class="hotel-info-detail">
+                        <strong>💰 Tarifs:</strong>
+                        <p>${info.rooms}</p>
+                    </div>
+                    <div class="hotel-info-detail">
+                        <strong>📝 Description:</strong>
+                        <p>${info.description}</p>
+                    </div>
+                    <div class="hotel-info-detail">
+                        <strong>🎯 Services:</strong>
+                        <ul class="hotel-amenities">
+                            ${info.amenities.map(amenity => `<li>${amenity}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <div class="hotel-info-detail">
+                        <strong>💡 Réservation:</strong>
+                        <p>${info.booking}</p>
+                        <p><em>Pour réserver, contactez directement l'établissement ou utilisez leur site web. N'hésitez pas à mentionner le mariage de Lauren & Maxime !</em></p>
+                    </div>
+                `;
                 
-                alert(modalContent);
-                console.log('✅ Hotel info displayed successfully for:', hotelName);
+                openModal();
+                console.log('✅ Hotel info modal displayed successfully for:', hotelName);
             } else {
-                const fallbackMessage = `Informations pour ${hotelName}:
-
-Nous travaillons actuellement sur les détails de cet hébergement. 
-
-Pour plus d'informations et réservations, veuillez nous contacter directement:
-📞 Lauren: 06 12 34 56 78
-📞 Maxime: 06 98 76 54 32
-✉️ laurenetmaxime@gmail.com
-
-Mentionnez le mariage de Lauren & Maxime pour bénéficier d'éventuelles réductions !`;
+                detailsContainer.innerHTML = `
+                    <h3>${hotelName}</h3>
+                    <div class="hotel-info-detail">
+                        <p>Nous travaillons actuellement sur les détails de cet hébergement.</p>
+                        <p><strong>Pour plus d'informations et réservations, veuillez nous contacter directement:</strong></p>
+                        <p>📞 Lauren: 06 12 34 56 78<br>
+                        📞 Maxime: 06 98 76 54 32<br>
+                        ✉️ laurenetmaxime@gmail.com</p>
+                        <p><em>Mentionnez le mariage de Lauren & Maxime pour bénéficier d'éventuelles réductions !</em></p>
+                    </div>
+                `;
                 
-                alert(fallbackMessage);
-                console.log('Fallback info displayed for:', hotelName);
+                openModal();
+                console.log('Fallback info modal displayed for:', hotelName);
+            }
+        }
+        
+        // Modal control functions
+        function openModal() {
+            const modal = document.getElementById('hotelInfoModal');
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+        
+        function closeModal() {
+            const modal = document.getElementById('hotelInfoModal');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
             }
         }
         
@@ -466,7 +538,7 @@ Mentionnez le mariage de Lauren & Maxime pour bénéficier d'éventuelles réduc
             });
         });
         
-        console.log('✅ Accommodation cards setup complete');
+        console.log('✅ Accommodation cards with modal system setup complete');
     }
     
     // Call setup immediately after DOM content loaded
@@ -504,7 +576,7 @@ Mentionnez le mariage de Lauren & Maxime pour bénéficier d'éventuelles réduc
         
         if (window.scrollY > 50) {
             navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-            navbar.style.boxShadow = '0 2px 10px rgba(135, 169, 107, 0.1)';
+            navbar.style.boxShadow = '0 2px 10px rgba(139, 168, 136, 0.1)';
         } else {
             navbar.style.background = 'rgba(255, 255, 255, 0.95)';
             navbar.style.boxShadow = 'none';
@@ -612,7 +684,7 @@ Mentionnez le mariage de Lauren & Maxime pour bénéficier d'éventuelles réduc
         }, observerOptions);
         
         // Add animation styles and observe elements
-        const animatedElements = document.querySelectorAll('.timeline-item, .accommodation-card, .gifts-category, .restaurant-card, .attraction-card');
+        const animatedElements = document.querySelectorAll('.timeline-item, .accommodation-card, .gifts-category, .restaurant-card, .attraction-card, .venue-info');
         animatedElements.forEach((element, index) => {
             element.style.opacity = '0';
             element.style.transform = 'translateY(20px)';
@@ -697,80 +769,130 @@ Mentionnez le mariage de Lauren & Maxime pour bénéficier d'éventuelles réduc
     
     setupAttractionCards();
     
-    console.log('🌿 Lauren & Maxime wedding website fully loaded with EmailJS integration! 💚');
-    console.log('✅ All features initialized including EmailJS email sending');
+    // Enhanced "The Borels" and couple name animation on page load
+    function animateCoupleNames() {
+        const familyName = document.querySelector('.family-name');
+        const heroTitle = document.querySelector('.hero-title');
+        const venueInfo = document.querySelector('.venue-info');
+        
+        if (familyName && heroTitle && venueInfo) {
+            // Add initial animation styles
+            familyName.style.opacity = '0';
+            familyName.style.transform = 'translateY(-20px)';
+            heroTitle.style.opacity = '0';
+            heroTitle.style.transform = 'translateY(30px)';
+            venueInfo.style.opacity = '0';
+            venueInfo.style.transform = 'translateY(20px)';
+            
+            // Animate "The Borels" first
+            setTimeout(() => {
+                familyName.style.transition = 'all 0.8s ease-out';
+                familyName.style.opacity = '1';
+                familyName.style.transform = 'translateY(0)';
+                
+                // Then animate "Lauren & Maxime" (main focus)
+                setTimeout(() => {
+                    heroTitle.style.transition = 'all 1.2s ease-out';
+                    heroTitle.style.opacity = '1';
+                    heroTitle.style.transform = 'translateY(0)';
+                    
+                    // Finally animate venue info
+                    setTimeout(() => {
+                        venueInfo.style.transition = 'all 0.8s ease-out';
+                        venueInfo.style.opacity = '1';
+                        venueInfo.style.transform = 'translateY(0)';
+                    }, 400);
+                }, 300);
+            }, 600);
+            
+            console.log('✅ Enhanced couple names animation initialized with proper hierarchy');
+        }
+    }
+    
+    animateCoupleNames();
+    
+    console.log('🌿 Lauren & Maxime wedding website fully loaded with updated design! 💚');
+    console.log('✅ All features initialized with REAL EmailJS configuration');
     console.log('📧 RSVP form will send emails to laurenetmaxime@gmail.com');
-    console.log('🔧 Navigation and interaction issues fixed');
-    console.log('💌 EmailJS service configured for Gmail delivery');
-    console.log('🏨 Hotel info buttons working correctly');
+    console.log('🔧 Navigation updated with "The Borels" text logo');
+    console.log('💌 EmailJS service configured with real values: service_1si5ien, template_6iaihg4');
+    console.log('🏨 Hotel info buttons working with modal system');
+    console.log('🖼️ Full homepage watermark background applied');
+    console.log('🎨 Typography hierarchy: The Borels → Lauren & Maxime (MAIN) → Maison Claudie (smaller)');
+    console.log('📱 No white boxes around venue name - clean transparent design');
 });
 
-// Enhanced styles for full functionality with EmailJS
-const finalStyles = `
+// Additional styles for full functionality
+const enhancedStyles = `
 <style>
-/* Ensure all form elements are fully interactive */
+/* Ensure all interactive elements work perfectly */
 .form-control {
     pointer-events: auto !important;
     user-select: text !important;
     -webkit-user-select: text !important;
     -moz-user-select: text !important;
-    background-color: var(--color-surface) !important;
-    color: var(--color-text) !important;
 }
 
 .form-control:focus {
-    outline: 2px solid var(--color-primary) !important;
+    outline: 2px solid var(--color-sage-primary) !important;
     outline-offset: 2px;
-    border-color: var(--color-primary) !important;
+    border-color: var(--color-sage-primary) !important;
 }
 
-/* Ensure buttons are clickable */
 .hotel-info-btn, .btn {
     pointer-events: auto !important;
     cursor: pointer !important;
 }
 
-/* Enhanced radio button styling */
-.radio-label {
-    cursor: pointer;
-    transition: all 0.3s ease;
+/* Enhanced typography hierarchy animations */
+.family-name {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.radio-label:hover {
-    background-color: var(--color-sage-light);
+.hero-title {
+    text-shadow: 0 3px 6px rgba(0,0,0,0.15);
 }
 
-.radio-label input[type="radio"]:checked + .radio-custom + span {
-    font-weight: 600;
-    color: var(--color-sage-dark);
+.venue-name {
+    text-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-/* Select dropdown enhancement */
-select.form-control {
-    cursor: pointer;
-    appearance: menulist;
-    -webkit-appearance: menulist;
-    -moz-appearance: menulist;
+/* Enhanced mobile responsiveness */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    
+    .family-name {
+        font-size: 1.8rem;
+    }
+    
+    .venue-name {
+        font-size: 1.6rem;
+        letter-spacing: 0.1em;
+    }
 }
 
-/* Restaurant and attraction cards enhancement */
-.restaurant-card, .attraction-card {
-    cursor: pointer;
-    transition: all 0.3s ease;
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.8rem;
+    }
+    
+    .family-name {
+        font-size: 1.5rem;
+    }
+    
+    .venue-name {
+        font-size: 1.4rem;
+        letter-spacing: 0.08em;
+    }
+    
+    .venue-location {
+        font-size: 1rem;
+    }
 }
 
-.restaurant-card:hover, .attraction-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-}
-
-/* Navigation link enhancements */
-.nav-link {
-    pointer-events: auto !important;
-    cursor: pointer !important;
-}
-
-/* Enhanced loading button styles */
+/* Enhanced loading states */
 .btn--loading {
     position: relative;
     color: transparent !important;
@@ -785,7 +907,7 @@ select.form-control {
     left: 50%;
     margin-left: -10px;
     margin-top: -10px;
-    border: 2px solid var(--color-btn-primary-text);
+    border: 2px solid var(--color-sage-primary);
     border-radius: 50%;
     border-top-color: transparent;
     animation: button-loading-spinner 1s ease infinite;
@@ -799,34 +921,8 @@ select.form-control {
     transform: rotate(1turn);
   }
 }
-
-/* Improved mobile responsiveness for new sections */
-@media (max-width: 768px) {
-    .restaurants-grid, .attractions-grid {
-        grid-template-columns: 1fr;
-        gap: var(--space-16);
-    }
-    
-    .restaurant-card, .attraction-card {
-        padding: var(--space-20);
-    }
-    
-    .restaurant-card h3, .attraction-card h3 {
-        font-size: 1.3rem;
-    }
-}
-
-/* EmailJS success and error message enhancements */
-.rsvp-success, .rsvp-error {
-    margin-top: var(--space-16);
-}
-
-.rsvp-success p, .rsvp-error p {
-    font-size: 1.125rem;
-    line-height: 1.6;
-}
 </style>
 `;
 
-// Inject final styles
-document.head.insertAdjacentHTML('beforeend', finalStyles);
+// Inject enhanced styles
+document.head.insertAdjacentHTML('beforeend', enhancedStyles);

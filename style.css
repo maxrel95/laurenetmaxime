@@ -738,11 +738,11 @@ select.form-control {
 }
 
 /* END PERPLEXITY DESIGN SYSTEM */
-/* Additional wedding-specific styles for Lauren & Maxime */
+/* Wedding-specific styles for Lauren & Maxime with exact Save the Date design */
 
 :root {
-  /* Updated Sage Green Wedding Color Palette - Dark Sage Green replaces Orange */
-  --color-sage-primary: #87A96B;
+  /* Exact Save the Date Colors */
+  --color-sage-primary: #8BA888;
   --color-sage-secondary: #9CAF88;
   --color-sage-light: #B8C5A0;
   --color-sage-dark: #6B8A52;
@@ -756,21 +756,23 @@ select.form-control {
   --color-stone: #E5E0D8;
   --color-stone-light: #F2F0EC;
   
-  /* Typography - Updated with fancy wedding fonts */
-  --font-fancy: 'Dancing Script', cursive;
-  --font-elegant: 'Great Vibes', cursive;
-  --font-serif: 'Playfair Display', serif;
-  --font-sans: 'Inter', sans-serif;
+  /* Exact Typography from Save the Date */
+  --font-allura: 'Allura', cursive;
+  --font-great-vibes: 'Great Vibes', cursive;
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-inter: 'Inter', sans-serif;
 }
 
+/* Global Styles - No watermark on body (homepage only) */
 body {
-  font-family: var(--font-sans);
+  font-family: var(--font-inter);
   line-height: 1.6;
   color: var(--color-text);
   background-color: var(--color-cream-warm);
+  position: relative;
 }
 
-/* Navigation */
+/* Navigation with "The Borels" text logo */
 .navbar {
   position: fixed;
   top: 0;
@@ -778,7 +780,7 @@ body {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   z-index: 1000;
-  border-bottom: 1px solid rgba(135, 169, 107, 0.2);
+  border-bottom: 1px solid rgba(139, 168, 136, 0.2);
   transition: all var(--duration-normal) var(--ease-standard);
 }
 
@@ -789,9 +791,13 @@ body {
   padding: var(--space-12) 0;
 }
 
-.nav-monogram {
-  height: 40px;
-  width: auto;
+/* "The Borels" text logo in navigation */
+.nav-logo-text {
+  font-family: var(--font-allura);
+  font-size: 1.8rem;
+  color: var(--color-sage-primary);
+  font-weight: 400;
+  letter-spacing: 0.02em;
 }
 
 .nav-menu {
@@ -803,7 +809,7 @@ body {
 }
 
 .nav-link {
-  font-family: var(--font-sans);
+  font-family: var(--font-inter);
   font-weight: 500;
   color: var(--color-sage-dark);
   text-decoration: none;
@@ -847,7 +853,7 @@ body {
   transition: all var(--duration-fast) var(--ease-standard);
 }
 
-/* Hero Section - Updated with Maison Claudie watermark background */
+/* Hero Section - FULL HOMEPAGE WATERMARK */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -859,6 +865,7 @@ body {
   text-align: center;
 }
 
+/* FULL HOMEPAGE WATERMARK - Covers entire homepage background */
 .hero::before {
   content: '';
   position: absolute;
@@ -866,46 +873,97 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('https://user-gen-media-assets.s3.amazonaws.com/seedream_images/a1ec87eb-0f76-4eab-9f79-fafe3940bde5.png');
+  background-image: url('https://user-gen-media-assets.s3.amazonaws.com/seedream_images/ff37b7ef-86ba-421d-8841-548ded396a94.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.12;
+  opacity: 0.08;
   z-index: 1;
+  pointer-events: none;
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 600px;
+  max-width: 700px;
 }
 
-.hero-monogram {
+/* "The Borels" at top of homepage - visible but smaller */
+.hero-family-name {
   margin-bottom: var(--space-32);
   margin-top: var(--space-24);
 }
 
-.monogram-image {
-  width: 120px;
-  height: auto;
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
-}
-
-.hero-title {
-  font-family: var(--font-elegant);
-  font-size: 4.5rem;
+.family-name {
+  font-family: var(--font-allura);
+  font-size: 2.8rem;
   font-weight: 400;
   color: var(--color-sage-dark);
   margin: 0;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.02em;
   text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+/* "Lauren & Maxime" as MAIN FOCUS - largest text */
+.hero-title {
+  font-family: var(--font-great-vibes);
+  font-size: 6rem;
+  font-weight: 400;
+  color: var(--color-sage-primary);
+  margin: var(--space-24) 0;
+  letter-spacing: -0.02em;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
 .hero-subtitle {
-  font-family: var(--font-fancy);
+  font-family: var(--font-allura);
   font-size: 1.8rem;
   color: var(--color-olive);
-  margin: var(--space-16) 0;
+  margin: var(--space-16) 0 var(--space-32);
+}
+
+/* Venue Info - NO WHITE BACKGROUND BOXES */
+.venue-info {
+  margin: var(--space-32) 0;
+  padding: 0;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+/* "MAISON CLAUDIE" - smaller and more subtle */
+.venue-name {
+  font-family: var(--font-montserrat);
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--color-sage-dark);
+  margin: 0;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.venue-name::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-sage-primary), var(--color-olive));
+  border-radius: 2px;
+}
+
+.venue-location {
+  font-family: var(--font-montserrat);
+  font-size: 1.4rem;
+  color: var(--color-olive);
+  margin: var(--space-12) 0 0;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  font-weight: 400;
 }
 
 .hero-date {
@@ -913,11 +971,11 @@ body {
   align-items: center;
   justify-content: center;
   gap: var(--space-16);
-  margin: var(--space-24) 0;
+  margin: var(--space-32) 0;
 }
 
 .date-number {
-  font-family: var(--font-serif);
+  font-family: var(--font-montserrat);
   font-size: 5rem;
   font-weight: 700;
   color: var(--color-dark-sage);
@@ -931,17 +989,11 @@ body {
 }
 
 .date-text span {
-  font-family: var(--font-serif);
+  font-family: var(--font-montserrat);
   font-size: 1.25rem;
   color: var(--color-sage-dark);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-}
-
-.hero-location {
-  font-size: 1.125rem;
-  color: var(--color-olive);
-  margin-bottom: var(--space-32);
 }
 
 .countdown {
@@ -957,7 +1009,7 @@ body {
 
 .countdown-number {
   display: block;
-  font-family: var(--font-serif);
+  font-family: var(--font-montserrat);
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--color-sage-dark);
@@ -977,22 +1029,14 @@ body {
   margin-top: var(--space-32);
 }
 
-/* Remove the venue illustration from bottom right */
-.venue-illustration {
-  display: none;
-}
-
-.venue-drawing {
-  display: none;
-}
-
 /* Sections */
 section {
   padding: var(--space-32) 0;
+  position: relative;
 }
 
 .section-title {
-  font-family: var(--font-fancy);
+  font-family: var(--font-great-vibes);
   font-size: 3rem;
   text-align: center;
   color: var(--color-sage-dark);
@@ -1037,13 +1081,13 @@ section {
 }
 
 .welcome-intro {
-  font-family: var(--font-fancy);
+  font-family: var(--font-allura);
   font-size: 1.5rem !important;
   color: var(--color-olive) !important;
 }
 
 .welcome-signature {
-  font-family: var(--font-fancy) !important;
+  font-family: var(--font-allura) !important;
   font-size: 1.4rem !important;
   margin-top: var(--space-32) !important;
 }
@@ -1057,7 +1101,7 @@ section {
 }
 
 .love-story h3 {
-  font-family: var(--font-fancy);
+  font-family: var(--font-allura);
   font-size: 1.8rem;
   color: var(--color-sage-dark);
   margin-bottom: var(--space-16);
@@ -1100,7 +1144,7 @@ section {
 
 .timeline-time {
   width: 80px;
-  font-family: var(--font-serif);
+  font-family: var(--font-montserrat);
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--color-dark-sage);
@@ -1129,7 +1173,7 @@ section {
 }
 
 .timeline-content h3 {
-  font-family: var(--font-fancy);
+  font-family: var(--font-allura);
   font-size: 1.4rem;
   color: var(--color-sage-dark);
   margin-bottom: var(--space-8);
@@ -1152,7 +1196,7 @@ section {
 }
 
 .program-notes h3 {
-  font-family: var(--font-fancy);
+  font-family: var(--font-allura);
   font-size: 1.6rem;
   color: var(--color-sage-dark);
   margin-bottom: var(--space-16);
@@ -1257,7 +1301,7 @@ section {
 }
 
 .rsvp-success h3 {
-  font-family: var(--font-fancy);
+  font-family: var(--font-allura);
   font-size: 1.8rem;
   color: var(--color-success);
   margin-bottom: var(--space-16);
@@ -1274,7 +1318,7 @@ section {
 }
 
 .rsvp-error h3 {
-  font-family: var(--font-fancy);
+  font-family: var(--font-allura);
   font-size: 1.8rem;
   color: var(--color-error);
   margin-bottom: var(--space-16);
@@ -1340,7 +1384,7 @@ section {
 }
 
 .accommodation-card h3 {
-  font-family: var(--font-fancy);
+  font-family: var(--font-allura);
   font-size: 1.5rem;
   color: var(--color-sage-dark);
   margin-bottom: var(--space-8);
@@ -1381,7 +1425,100 @@ section {
   border-radius: var(--radius-lg);
 }
 
-/* Restaurants Section - Same background style as welcome section */
+/* Hotel info modal styles */
+.hotel-info-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: var(--space-20);
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--duration-normal) var(--ease-standard);
+}
+
+.hotel-info-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.hotel-info-content {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-32);
+  max-width: 500px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.hotel-info-close {
+  position: absolute;
+  top: var(--space-16);
+  right: var(--space-16);
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all var(--duration-fast) var(--ease-standard);
+}
+
+.hotel-info-close:hover {
+  background: var(--color-secondary);
+  color: var(--color-text);
+}
+
+.hotel-info-content h3 {
+  font-family: var(--font-allura);
+  font-size: 1.8rem;
+  color: var(--color-sage-dark);
+  margin-bottom: var(--space-16);
+  margin-right: var(--space-32);
+}
+
+.hotel-info-detail {
+  margin-bottom: var(--space-16);
+}
+
+.hotel-info-detail strong {
+  color: var(--color-olive);
+  display: block;
+  margin-bottom: var(--space-4);
+}
+
+.hotel-amenities {
+  list-style: none;
+  padding: 0;
+}
+
+.hotel-amenities li {
+  padding: var(--space-4) 0;
+  position: relative;
+  padding-left: var(--space-20);
+}
+
+.hotel-amenities li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-sage-primary);
+}
+
+/* Restaurants Section */
 .restaurants-section {
   background: var(--color-bg-3);
 }
@@ -1409,7 +1546,7 @@ section {
 }
 
 .restaurant-card h3 {
-  font-family: var(--font-fancy);
+  font-family: var(--font-allura);
   font-size: 1.5rem;
   color: var(--color-sage-dark);
   margin-bottom: var(--space-8);
@@ -1446,7 +1583,7 @@ section {
   border-radius: var(--radius-lg);
 }
 
-/* Attractions Section - Sage green background with white content cards */
+/* Attractions Section */
 .attractions-section {
   background: var(--color-sage-light);
 }
@@ -1474,7 +1611,7 @@ section {
 }
 
 .attraction-card h3 {
-  font-family: var(--font-fancy);
+  font-family: var(--font-allura);
   font-size: 1.4rem;
   color: var(--color-sage-dark);
   margin-bottom: var(--space-8);
@@ -1505,7 +1642,7 @@ section {
   border-radius: var(--radius-lg);
 }
 
-/* Gifts Section - Updated to match welcome section background */
+/* Gifts Section */
 .gifts-section {
   background: var(--color-bg-3);
 }
@@ -1527,7 +1664,7 @@ section {
 }
 
 .gifts-category h3 {
-  font-family: var(--font-fancy);
+  font-family: var(--font-allura);
   font-size: 1.6rem;
   color: var(--color-sage-dark);
   margin-bottom: var(--space-20);
@@ -1577,7 +1714,7 @@ section {
 
 .contact-info h3,
 .practical-info h3 {
-  font-family: var(--font-fancy);
+  font-family: var(--font-allura);
   font-size: 1.6rem;
   color: var(--color-sage-dark);
   margin-bottom: var(--space-16);
@@ -1632,14 +1769,15 @@ section {
   text-align: center;
 }
 
-.footer-monogram {
-  width: 60px;
-  height: auto;
+.footer-logo-text {
+  font-family: var(--font-allura);
+  font-size: 1.8rem;
+  color: var(--color-cream-warm);
   margin-bottom: var(--space-16);
-  filter: brightness(0) invert(1);
+  display: inline-block;
 }
 
-/* Button Overrides for Theme - Updated with dark sage */
+/* Button Overrides for Theme */
 .btn--primary {
   background: var(--color-sage-primary);
   color: white;
@@ -1668,6 +1806,18 @@ section {
   .nav-link {
     font-size: 0.85rem;
   }
+  
+  .venue-name {
+    font-size: 1.8rem;
+  }
+  
+  .hero-title {
+    font-size: 4.5rem;
+  }
+  
+  .family-name {
+    font-size: 2.2rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1680,7 +1830,19 @@ section {
   }
   
   .hero-title {
-    font-size: 3rem;
+    font-size: 3.5rem;
+  }
+  
+  .family-name {
+    font-size: 1.8rem;
+  }
+  
+  .venue-name {
+    font-size: 1.6rem;
+  }
+  
+  .venue-location {
+    font-size: 1.2rem;
   }
   
   .hero-actions {
@@ -1720,16 +1882,17 @@ section {
     font-size: 2.2rem;
   }
   
-  .hero-monogram {
-    margin-top: var(--space-32);
-  }
-  
   .restaurants-grid {
     grid-template-columns: 1fr;
   }
   
   .attractions-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .hotel-info-content {
+    padding: var(--space-24);
+    margin: var(--space-16);
   }
 }
 
@@ -1751,7 +1914,19 @@ section {
   }
   
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
+  }
+  
+  .family-name {
+    font-size: 1.5rem;
+  }
+  
+  .venue-name {
+    font-size: 1.4rem;
+  }
+  
+  .venue-location {
+    font-size: 1rem;
   }
 }
 
@@ -1772,7 +1947,7 @@ section {
     transform: translateX(-100%);
     transition: transform 0.3s ease;
     z-index: 999;
-    border-top: 1px solid rgba(135, 169, 107, 0.2);
+    border-top: 1px solid rgba(139, 168, 136, 0.2);
     display: flex;
     gap: var(--space-16);
   }
