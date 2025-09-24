@@ -203,19 +203,34 @@
                 <form class="rsvp-form" id="rsvpForm" novalidate>
                     <div class="form-row">
                         <div class="form-group">
-                            <label class="form-label" for="guestName">Nom(s) des invités *</label>
-                            <input type="text" name="guestName" id="guestName" class="form-control" required autocomplete="name">
+                            <label class="form-label" for="guestFirstName">Prénom *</label>
+                            <input type="text" name="guestFirstName" id="guestFirstName" class="form-control" required autocomplete="Fname">
                         </div>
                         <div class="form-group">
-                            <label class="form-label" for="email">Email *</label>
-                            <input type="email" name="email" id="email" class="form-control" required autocomplete="email">
+                            <label class="form-label" for="guestName">Nom *</label>
+                            <input type="text" name="guestName" id="guestName" class="form-control" required autocomplete="name">
                         </div>
                     </div>
                     
                     <div class="form-row">
                         <div class="form-group">
+                            <label class="form-label" for="adresse">Adresse</label>
+                            <input type="add" name="adresse" id="adresse" class="form-control" autocomplete="add">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="cp">Code postal et Ville *</label>
+                            <input type="cp" name="cp" id="cp" class="form-control" required autocomplete="cp">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
                             <label class="form-label" for="phone">Téléphone</label>
                             <input type="tel" name="phone" id="phone" class="form-control" autocomplete="tel">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email *</label>
+                            <input type="email" name="email" id="email" class="form-control" required autocomplete="email">
                         </div>
                     </div>
                     
@@ -235,7 +250,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label class="form-label" for="weddingGuests">Nombre de personnes pour le mariage</label>
                         <select name="weddingGuests" id="weddingGuests" class="form-control">
                             <option value="">Sélectionnez</option>
@@ -244,7 +259,7 @@
                             <option value="3">3 personnes</option>
                             <option value="4">4 personnes</option>
                         </select>
-                    </div>
+                    </div>-->
                     
                     <div class="form-group">
                         <label class="form-label">Présence au brunch (20 septembre 2026)</label>
@@ -262,7 +277,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <!--<div class="form-group">
                         <label class="form-label" for="brunchGuests">Nombre de personnes pour le brunch</label>
                         <select name="brunchGuests" id="brunchGuests" class="form-control">
                             <option value="">Sélectionnez</option>
@@ -271,7 +286,7 @@
                             <option value="3">3 personnes</option>
                             <option value="4">4 personnes</option>
                         </select>
-                    </div>
+                    </div>-->
                     
                     <div class="form-group">
                         <label class="form-label" for="dietary">Allergies ou régimes alimentaires particuliers</label>
