@@ -163,13 +163,16 @@ document.addEventListener('DOMContentLoaded', function() {
         
         function getFormData() {
             return {
+                guestFirstName: getValue('#guestFirstName'),
                 guestName: getValue('#guestName'),
+                adresse: getValue('#adresse'),
+                cp: getValue('#cp'),
                 email: getValue('#email'),
                 phone: getValue('#phone'),
                 weddingAttendance: getValue('input[name="weddingAttendance"]:checked'),
-                weddingGuests: getValue('#weddingGuests'),
+                //weddingGuests: getValue('#weddingGuests'),
                 brunchAttendance: getValue('input[name="brunchAttendance"]:checked'),
-                brunchGuests: getValue('#brunchGuests'),
+                //brunchGuests: getValue('#brunchGuests'),
                 dietary: getValue('#dietary'),
                 message: getValue('#message')
             };
@@ -201,10 +204,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 return false;
             }
             
-            if (data.weddingAttendance === 'oui' && !data.weddingGuests) {
-                showValidationError('Veuillez indiquer le nombre de personnes pour le mariage.', '#weddingGuests');
-                return false;
-            }
+            //if (data.weddingAttendance === 'oui' && !data.weddingGuests) {
+            //    showValidationError('Veuillez indiquer le nombre de personnes pour le mariage.', '#weddingGuests');
+            //    return false;
+            //}
             
             return true;
         }
@@ -231,9 +234,12 @@ document.addEventListener('DOMContentLoaded', function() {
             // Prepare template parameters for EmailJS
             const templateParams = {
                 to_email: EMAILJS_CONFIG.RECIPIENT_EMAIL,
-                from_name: data.guestName,
+                from_name: data.guestFirstName,
                 from_email: data.email,
+                guest_Firstnames: data.guestFirstName,
                 guest_names: data.guestName,
+                adresse: data.adresse,
+                cp: data.cp,
                 guest_email: data.email,
                 guest_phone: data.phone || 'Non renseigné',
                 wedding_attendance: data.weddingAttendance === 'oui' ? 'Oui, présent(e)' : 'Non, absent(e)',
